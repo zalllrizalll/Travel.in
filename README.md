@@ -28,17 +28,13 @@ The following is a list of dependencies used in the Travel In application:
 ## Installation
 
 1. Clone this repository to your device:
-``bash
-git clone https://github.com/username/travel_in.git
+`git clone https://github.com/username/travel_in.git`bash
 
 2. Go to the project directory:
-``bash
-cd travel_in
+`cd travel_in`bash
 
 3. Instal dependencies:
-``bash
-flutter pub get
+`flutter pub get`bash
 
 4. Launch the application:
-``bash
-flutter run
+`flutter run`bash
