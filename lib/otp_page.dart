@@ -126,51 +126,53 @@ class _FormOtpCodeState extends State<FormOtpCode> {
   @override
   Widget build(BuildContext context) {
     return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: List.generate(
-            6,
-            (index) => Container(
-                  width: 50,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.grey.withOpacity(0.2),
-                          spreadRadius: 2,
-                          blurRadius: 5,
-                          offset: const Offset(0, 5))
-                    ],
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: TextField(
-                    onChanged: (value) {
-                      if (value.length == 1) {
-                        if (index == 5) {
-                          FocusScope.of(context).unfocus();
-                        } else {
-                          FocusScope.of(context).nextFocus();
-                        }
-                      }
-                    },
-                    style: const TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                    textAlign: TextAlign.center,
-                    keyboardType: TextInputType.number,
-                    maxLength: 1,
-                    decoration: InputDecoration(
-                        counterText: '',
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: const BorderSide(color: Colors.grey),
-                            borderRadius: BorderRadius.circular(8)),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: const BorderSide(color: Colors.orange),
-                          borderRadius: BorderRadius.circular(8),
-                        )),
-                  ),
-                )));
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: List.generate(
+        6,
+        (index) => Container(
+          width: 50,
+          height: 60,
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey.withOpacity(0.2),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: const Offset(0, 5))
+            ],
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: TextField(
+            onChanged: (value) {
+              if (value.length == 1) {
+                if (index == 5) {
+                  FocusScope.of(context).unfocus();
+                } else {
+                  FocusScope.of(context).nextFocus();
+                }
+              }
+            },
+            style: const TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+            textAlign: TextAlign.center,
+            keyboardType: TextInputType.number,
+            maxLength: 1,
+            decoration: InputDecoration(
+                counterText: '',
+                enabledBorder: OutlineInputBorder(
+                    borderSide: const BorderSide(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(8)),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: const BorderSide(color: Colors.orange),
+                  borderRadius: BorderRadius.circular(8),
+                )),
+          ),
+        ),
+      ),
+    );
   }
 }

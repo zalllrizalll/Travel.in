@@ -9,120 +9,121 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: Stack(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.5,
-              width: double.infinity,
-              child: Image.asset(
-                place.image,
-                fit: BoxFit.cover,
-              ),
+      backgroundColor: Colors.white,
+      body: Stack(
+        children: [
+          SizedBox(
+            height: MediaQuery.of(context).size.height * 0.5,
+            width: double.infinity,
+            child: Image.asset(
+              place.image,
+              fit: BoxFit.cover,
             ),
-            SafeArea(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.white60,
-                      child: IconButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          icon: const Icon(Icons.arrow_back_ios_rounded,
-                              color: Colors.black)),
-                    ),
-                    CircleAvatar(
-                      backgroundColor: Colors.white60,
-                      child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.more_horiz_rounded)),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                    ),
+          ),
+          SafeArea(
+            child: Padding(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  CircleAvatar(
+                    backgroundColor: Colors.white60,
+                    child: IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(Icons.arrow_back_ios_rounded,
+                            color: Colors.black)),
                   ),
-                  child: SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    place.name,
-                                    style: const TextStyle(
-                                        fontSize: 24,
-                                        fontFamily: 'Poppins',
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  const SizedBox(height: 3.0),
-                                  Text(
-                                    place.location,
-                                    style: const TextStyle(
-                                        fontSize: 16, color: Colors.grey),
-                                  ),
-                                ],
-                              ),
-                              const BookmarkAndShare()
-                            ],
-                          ),
-                          const SizedBox(height: 16.0),
-                          SizedBox(
-                            child: Column(
+                  CircleAvatar(
+                    backgroundColor: Colors.white60,
+                    child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.more_horiz_rounded)),
+                  )
+                ],
+              ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+                height: MediaQuery.of(context).size.height * 0.6,
+                decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30),
+                  ),
+                ),
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                ExpandableText(text: place.description),
-                                const SizedBox(height: 16.0),
-                                const Text(
-                                  'Overview',
-                                  style: TextStyle(
+                                Text(
+                                  place.name,
+                                  style: const TextStyle(
+                                      fontSize: 24,
                                       fontFamily: 'Poppins',
-                                      fontSize: 20,
                                       fontWeight: FontWeight.bold),
                                 ),
-                                const SizedBox(height: 8.0),
-                                MonumentArchitecture(place: place),
-                                const SizedBox(height: 16.0),
-                                const Text(
-                                  'Special Meals',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
+                                const SizedBox(height: 3.0),
+                                Text(
+                                  place.location,
+                                  style: const TextStyle(
+                                      fontSize: 16, color: Colors.grey),
                                 ),
-                                const SizedBox(height: 8.0),
-                                SpecialMeals(place: place),
                               ],
                             ),
-                          )
-                        ],
-                      ),
+                            const BookmarkAndShare()
+                          ],
+                        ),
+                        const SizedBox(height: 16.0),
+                        SizedBox(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              ExpandableText(text: place.description),
+                              const SizedBox(height: 16.0),
+                              const Text(
+                                'Overview',
+                                style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(height: 8.0),
+                              MonumentArchitecture(place: place),
+                              const SizedBox(height: 16.0),
+                              const Text(
+                                'Special Meals',
+                                style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              const SizedBox(height: 8.0),
+                              SpecialMeals(place: place),
+                            ],
+                          ),
+                        )
+                      ],
                     ),
-                  )),
-            )
-          ],
-        ));
+                  ),
+                )),
+          )
+        ],
+      ),
+    );
   }
 }
 
@@ -135,7 +136,7 @@ class ExpandableText extends StatefulWidget {
 }
 
 class _ExpandableTextState extends State<ExpandableText> {
-  bool isExpanded = false;
+  bool _isExpanded = false;
 
   @override
   Widget build(BuildContext context) {
@@ -146,17 +147,17 @@ class _ExpandableTextState extends State<ExpandableText> {
           widget.text,
           style: const TextStyle(fontSize: 16, color: Colors.black87),
           textAlign: TextAlign.justify,
-          maxLines: isExpanded ? null : 4,
-          overflow: isExpanded ? TextOverflow.visible : TextOverflow.ellipsis,
+          maxLines: _isExpanded ? null : 4,
+          overflow: _isExpanded ? TextOverflow.visible : TextOverflow.ellipsis,
         ),
         InkWell(
           onTap: () {
             setState(() {
-              isExpanded = !isExpanded;
+              _isExpanded = !_isExpanded;
             });
           },
           child: Text(
-            isExpanded ? "Show less" : "Read more",
+            _isExpanded ? "Show less" : "Read more",
             style: const TextStyle(
                 color: Colors.blue, fontWeight: FontWeight.bold),
           ),
