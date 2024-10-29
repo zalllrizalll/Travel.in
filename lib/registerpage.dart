@@ -18,10 +18,8 @@ class RegisterPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Align(
-                alignment: Alignment.topCenter,
-                child: Expanded(
-                    flex: 1, child: Image.asset('images/register.png')),
-              ),
+                  alignment: Alignment.topCenter,
+                  child: Image.asset('images/register.png')),
               const Text(
                 'Sign Up',
                 style: TextStyle(

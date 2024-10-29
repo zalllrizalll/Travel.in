@@ -20,10 +20,8 @@ class LoginPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Align(
-                  alignment: Alignment.topCenter,
-                  child:
-                      Expanded(flex: 1, child: Image.asset('images/login.png')),
-                ),
+                    alignment: Alignment.topCenter,
+                    child: Image.asset('images/login.png')),
                 const Text(
                   'Travel.in',
                   style: TextStyle(
